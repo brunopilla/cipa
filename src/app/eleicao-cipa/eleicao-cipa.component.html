@@ -1,0 +1,78 @@
+  <po-page-default p-title="Inscrição para Eleição CIPA {{anoCorrente}}">
+    <po-loading-overlay [hidden]="isHideLoading"></po-loading-overlay>
+
+    <div style="margin-bottom: 10px;">
+      <p>
+        Venho, por meio desta, requerer inscrição como candidato para eleição dos representantes da Comissão Interna de Prevenção de Acidentes - CIPA, Gestão {{anoCorrente}}-{{anoSeguinte}}, da BRAZILIAN PET FOODS S.A.
+      </p>
+    </div>
+  
+    <form [formGroup]="eleicaoForm">
+      <div style="display: flex; align-items: last baseline;">
+        <po-field-container style="flex: 1;">
+          <po-number 
+            formControlName="matricula"
+            p-label="Matrícula" 
+            p-required 
+            p-placeholder="Digite a matrícula"
+            p-icon="po-icon po-icon-bar-code">
+          </po-number>
+        </po-field-container>
+        
+        <div style="margin-left: 10px;"> 
+          <po-button (click)="preencherCamposAutomaticamente()" p-icon="po-icon po-icon-search"></po-button>
+        </div>
+      </div>
+  
+      <po-field-container>
+        <po-input
+          formControlName="nomeCandidato" 
+          p-label="Nome do Candidato" 
+          p-required p-readonly="true"
+          p-icon="po-icon po-icon-user">
+        </po-input>
+      </po-field-container>
+  
+      <po-field-container>
+        <po-input
+          formControlName="cargo" 
+          p-label="Cargo" 
+          p-required p-readonly="true"
+          p-icon="po-icon po-icon-document-filled">
+        </po-input>
+      </po-field-container>
+  
+      <po-field-container>
+        <po-input 
+          formControlName="telefone" 
+          p-label="Telefone" 
+          p-required p-readonly="true"
+          p-icon="po-icon po-icon-telephone">
+        </po-input>
+      </po-field-container>
+  
+      <po-field-container>
+        <po-input
+          formControlName="data" 
+          p-label="Data Solicitação" 
+          p-required p-readonly="true"
+          p-icon="po-icon po-icon-calendar">
+        </po-input>
+      </po-field-container>
+      <div style="margin-top: 10px;">
+        <po-button 
+          class="po-sm-12" 
+          (click)="finalizarInscricao()" 
+          p-label="Solicitar Candidatura" 
+          [p-disabled]="!botaoHabilitado" 
+          p-icon="po-icon po-icon-upload"
+          p-kind="primary">
+        </po-button>
+      </div>
+      
+    </form>
+  </po-page-default>
+  
+  
+  
+  

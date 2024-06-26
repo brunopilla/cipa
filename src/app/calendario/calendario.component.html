@@ -1,0 +1,80 @@
+
+
+<div class="print-section">
+    <po-page-default p-title="Informativo Mensal Acidentes - CIPA">
+
+        
+                 
+        <div class="po-row">
+            <po-number
+                class="number"
+                po-field
+                [(ngModel)]="selectedMonth"
+                [p-min]="1"
+                [p-max]="12"
+                p-label="Mês"
+            ></po-number>
+        
+            <po-number
+                class="number"
+                po-field
+                [(ngModel)]="selectedYear"
+                [p-min]="1000"
+                [p-max]="3000"
+                p-label="Ano"
+            ></po-number>
+        
+            <po-button
+                class="button non-printable"
+                (p-click)="updateCalendar()"
+                [p-disabled]="!selectedMonth || !selectedYear"
+                p-icon="po-icon po-icon-search"
+                p-kind="primary"
+                p-aria-label="Atualizar Calendário"
+            ></po-button>
+
+            <po-button 
+                class="button non-printable"
+                (p-click)="updatePrint()" 
+                p-icon="po-icon po-icon-print" 
+                p-kind="primary"
+                p-aria-label="Imprimir Informativo"
+            ></po-button>
+
+        </div>
+    
+    <div class="po-row"> 
+        <div class="card-container-logo">
+            <div class="card-container" id="calendar">
+                <div 
+                    *ngFor="let card of cards" 
+                    [class]="card.class" 
+                    [style.top.px]="card.top" 
+                    [style.left.px]="card.left" 
+                    (click)="getOcorrenciasDoDia(+card.content)">
+                    {{ card.content }}
+                </div>
+            </div>
+        </div>      
+    </div>
+
+    <div class="po-row">
+        <div *ngIf="showTable">
+            <po-table [p-items]="items" [p-columns]="tableColumns"></po-table>
+        </div>
+        <div *ngIf="!showTable" class="image-container"></div>
+    </div>
+
+    <po-modal #modal p-title="Ocorrências do dia"> 
+       
+        <div class="po-row" class="table-container">
+            <po-table #tableModal 
+                [p-items]="itemsModal" 
+                [p-columns]="tableColumnsModal"
+            ></po-table>
+        </div>
+            
+    </po-modal>
+
+</po-page-default>
+</div>

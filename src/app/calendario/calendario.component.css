@@ -1,0 +1,130 @@
+@media print {
+    .print-section {
+      display: block !important;
+    }
+  
+    .non-printable {
+      display: none !important;
+    }
+  }
+
+
+.card-container {
+    position:relative;
+    width: 300px;
+    height: 300px;
+}
+
+.card-container-logo {   
+    width: 450px;
+    height: 450px;
+    display:grid;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-image: url('src\assets\cipa-logo.png');
+    background-size: 500PX;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.card {
+    position: absolute;
+    width: 30px; 
+    height: 30px;  
+    text-align: center;
+    line-height: 30px;
+    font-weight: bolder;
+}
+
+.disabled-card {
+    color: #4d4d4d;   
+    background-color: #b7bbb9;
+}
+
+.regular-card {
+    background-color: #00915a; ;
+    color: #ffffff;
+}
+
+.red-card {
+    background-color: red; ;
+    color: #ffffff;
+}
+
+.yellow-card {
+    background-color: rgb(255, 166, 0); ;
+    color: #ffffff;
+}
+
+.regular-card:hover {
+    transform: scale(1.5);
+    transition: 100ms;
+    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+    background-color: #023b26;
+    color: white;
+    cursor: pointer;
+}
+
+.red-card:hover {
+    transform: scale(1.5);
+    transition: 100ms;
+    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+    background-color: #8f0000;
+    color: white;
+    cursor: pointer;
+}
+
+.yellow-card:hover {
+    transform: scale(1.5);
+    transition: 100ms;
+    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+    background-color: #8b8202;
+    color: white;
+    cursor: pointer;
+}
+
+.empty-card {
+    background-color: rgba(250, 250, 250, 0);
+}
+
+.empty-green-card {
+    background-color: #00915a; 
+}
+
+.empty-disabled-card {
+    background-color: #b7bbb9;
+}
+
+.button {
+    align-self:flex-end;
+    padding: 8px;
+}
+
+.number {
+    align-self:flex-end;
+    padding: 0px 8px;
+}
+
+.po-row {
+    padding: 10px 0px;
+    justify-content: center;
+}
+
+.cipa-calendar {
+    align-items: center;
+    justify-items: center;
+}
+
+.table-container {
+    max-width: auto;
+}
+
+.image-container {
+    width: 500px;
+    height: 350px;
+    background-image: url('src\assets\happy-dog.png');
+    background-size: 400PX;
+    background-position:center;
+    background-repeat: no-repeat;
+}
